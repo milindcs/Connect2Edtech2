@@ -7,7 +7,7 @@ import { fadeUp, scaleIn } from '../utils/animationVariants'
 function Mentors() {
   return (
     <PageShell showSharedSections={false}>
-      <div className="w-full max-w-5xl mx-auto px-4 sm:px-6 md:px-8 pb-16 sm:pb-20 flex flex-col gap-10 sm:gap-12">
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-8 pb-16 sm:pb-20 flex flex-col gap-10 sm:gap-12">
         <motion.div
           initial="hidden"
           whileInView="visible"

@@ -133,7 +133,7 @@ function EnrollmentPage() {
 
   return (
     <PageShell>
-      <div className="w-full max-w-3xl mx-auto px-4 sm:px-0 pb-16 sm:pb-20 flex flex-col gap-5 sm:gap-6">
+      <div className="w-full max-w-3xl mx-auto pb-16 sm:pb-20 flex flex-col gap-5 sm:gap-6">
         {/* Course summary card */}
         <motion.div initial="hidden" animate="visible" custom={0} variants={fadeUp}>
           <div className="rounded-[1.25rem] sm:rounded-[1.5rem] p-4 sm:p-5 md:p-6 flex flex-col sm:flex-row items-center gap-4 sm:gap-5 bg-white border border-slate-100 shadow-sm">

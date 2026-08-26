@@ -32,8 +32,8 @@ const itemVariants = {
 
 function HiringPartnersSection() {
   return (
-    <section className="w-full py-16 sm:py-20 md:py-24 bg-white overflow-hidden">
-      <div className="max-w-7xl mx-auto px-5 sm:px-8 md:px-12">
+    <section className="w-full py-12 sm:py-16 md:py-20 lg:py-24 bg-white overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}

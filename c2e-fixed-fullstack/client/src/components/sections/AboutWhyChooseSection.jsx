@@ -22,7 +22,7 @@ const FEATURES = [
 function AboutWhyChooseSection() {
   return (
     <SectionShell tone="grey">
-      <section className="w-full px-4 sm:px-6 md:px-8 lg:px-12 py-10 sm:py-14 md:py-18 lg:py-24">
+      <section className="w-full">
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -42,7 +42,7 @@ function AboutWhyChooseSection() {
           whileInView="visible"
           viewport={{ once: true, amount: 0.1 }}
           variants={whyCardStagger}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 md:gap-5 max-w-5-xl lg:ml-0"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 md:gap-5 max-w-7xl mx-auto"
         >
           {FEATURES.map((feature, i) => (
             <motion.div

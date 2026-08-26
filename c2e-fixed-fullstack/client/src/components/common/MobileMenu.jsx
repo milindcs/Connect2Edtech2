@@ -36,9 +36,9 @@ function MobileMenu({ isOpen, onClose }) {
               w-full
               max-w-7xl
               mx-auto
-              px-5
-              sm:px-8
-              md:px-12
+              px-4
+              sm:px-6
+              md:px-8
               pt-5
               sm:pt-6
             "
@@ -139,9 +139,9 @@ function MobileMenu({ isOpen, onClose }) {
               w-full
               max-w-7xl
               mx-auto
-              px-5
-              sm:px-8
-              md:px-12
+              px-4
+              sm:px-6
+              md:px-8
               mt-12
               sm:mt-14
               md:mt-16
@@ -195,9 +195,9 @@ function MobileMenu({ isOpen, onClose }) {
               w-full
               max-w-7xl
               mx-auto
-              px-5
-              sm:px-8
-              md:px-12
+              px-4
+              sm:px-6
+              md:px-8
               mt-12
               pb-8
             "

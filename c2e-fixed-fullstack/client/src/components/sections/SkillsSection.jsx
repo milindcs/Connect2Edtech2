@@ -55,7 +55,7 @@ function SkillsSection() {
       className="relative w-full overflow-hidden"
       style={{ backgroundColor: '#000000' }}
     >
-      <div className="w-full px-4 sm:px-6 md:px-8 lg:px-12 py-16 sm:py-20 md:py-24 lg:py-28">
+      <div className="w-full px-4 sm:px-6 md:px-8 py-16 sm:py-20 md:py-24 lg:py-28">
         <div className="flex flex-col items-center text-center gap-4 sm:gap-5 md:gap-6 mb-12 sm:mb-14 md:mb-16">
           <motion.h2
             initial="hidden"

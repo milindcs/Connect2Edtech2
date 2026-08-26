@@ -20,8 +20,8 @@ const TESTIMONIALS = [
 
 function SuccessStoriesSection() {
   return (
-      <section className="w-full py-12 sm:py-16 md:py-20 lg:py-24 overflow-hidden">
-      <div className="flex flex-col max-w-7xl mx-auto px-5 sm:px-8 md:px-12">
+      <section className="w-full px-4 sm:px-6 md:px-8 py-12 sm:py-16 md:py-20 lg:py-24 overflow-hidden">
+      <div className="max-w-7xl mx-auto">
         <SectionHeading title="SUCCESS STORIES" align="left" className="mb-10 sm:mb-14 md:mb-16" />
       </div>
 

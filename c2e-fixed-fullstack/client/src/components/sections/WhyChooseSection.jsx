@@ -47,7 +47,7 @@ function WhyChooseSection() {
             },
           },
         }}
-        className="flex flex-col md:flex-row items-stretch justify-center gap-3 sm:gap-4 md:gap-6 max-w-4xl mx-auto"
+        className="flex flex-col md:flex-row items-stretch justify-center gap-3 sm:gap-4 md:gap-6 max-w-7xl mx-auto"
       >
         {ITEMS.map((item, i) => (
           <motion.div key={item.label} variants={fadeUp} custom={i}>

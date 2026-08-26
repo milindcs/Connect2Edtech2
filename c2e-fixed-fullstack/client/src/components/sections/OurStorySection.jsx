@@ -36,7 +36,7 @@ const STORY_POINTS = [
 function OurStorySection() {
   return (
     <SectionShell tone="grey">
-      <section className="w-full px-4 sm:px-6 md:px-8 lg:px-12 py-10 sm:py-14 md:py-18 lg:py-24">
+      <section className="w-full">
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -62,7 +62,7 @@ function OurStorySection() {
           whileInView="visible"
           viewport={{ once: true, amount: 0.1 }}
           variants={glassStagger}
-          className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-5 md:gap-6 lg:gap-8 max-w-5xl mx-auto"
+          className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-5 md:gap-6 lg:gap-8 max-w-7xl mx-auto"
         >
           {STORY_POINTS.map((point, i) => (
             <motion.div

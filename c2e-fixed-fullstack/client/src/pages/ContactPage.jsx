@@ -53,8 +53,8 @@ function ContactPage() {
           },
         }}
       >
-        <motion.div variants={fadeUp} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 md:gap-10 lg:gap-12 max-w-6xl mx-auto">
+        <motion.div variants={fadeUp} className="w-full">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 md:gap-10 max-w-7xl mx-auto">
             {/* Contact Info + Google Maps */}
             <div className="space-y-4 sm:space-y-6">
               {/* Quick contact methods */}

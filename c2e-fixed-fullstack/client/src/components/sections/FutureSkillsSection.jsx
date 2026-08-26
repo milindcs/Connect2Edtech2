@@ -112,7 +112,7 @@ function FutureSkillsSection() {
   if (status === 'loading') {
     return (
       <section className="w-full bg-white py-10 sm:py-14 md:py-20 font-sans">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-center">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 flex justify-center">
           <Loader2 className="w-6 h-6 animate-spin text-accent" />
         </div>
       </section>
@@ -122,7 +122,7 @@ function FutureSkillsSection() {
   if (status === 'error' || featuredCourses.length === 0) {
     return (
       <section className="w-full bg-white py-10 sm:py-14 md:py-20 font-sans">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 text-center">
           <p className="text-sm text-gray-muted">Could not load courses right now. Please try again shortly.</p>
         </div>
       </section>
@@ -137,7 +137,7 @@ function FutureSkillsSection() {
       variants={{ visible: { opacity: 1, y: 0 } }}
       transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-12 md:mb-14">
           <span className="inline-block text-indigo-600 font-semibold tracking-wide uppercase text-[10px] sm:text-xs md:text-sm bg-indigo-50 px-3 py-1 rounded-full mb-4">
@@ -152,7 +152,7 @@ function FutureSkillsSection() {
         </div>
 
         {/* Course Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-10 md:gap-12 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 md:gap-10 max-w-6xl mx-auto">
           {featuredCourses.map((course, i) => (
             <CourseCard key={course._id} course={course} index={i} />
           ))}

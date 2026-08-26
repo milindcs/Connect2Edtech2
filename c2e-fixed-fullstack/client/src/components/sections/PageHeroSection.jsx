@@ -3,7 +3,7 @@ import { fadeUp, fadeDown } from '../../utils/animationVariants'
 
 function PageHeroSection({ eyebrow, title, subtitle, videoSrc, children, className = '' }) {
   return (
-    <section className={`relative w-full h-[70vh] sm:h-[65vh] min-h-[500px] overflow-hidden flex items-end justify-end px-6 sm:px-12 lg:px-20 pt-8 pb-12 ${className}`}>
+    <section className={`relative w-full h-[70vh] sm:h-[65vh] min-h-[500px] overflow-hidden flex items-end justify-end px-4 sm:px-6 md:px-8 pt-8 pb-12 ${className}`}>
       {videoSrc && (
         <>
           {/* Background Video Layer */}

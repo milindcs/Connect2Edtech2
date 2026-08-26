@@ -38,7 +38,7 @@ const CARDS = [
 function MissionVisionSection() {
   return (
       <motion.section
-        className="w-full px-4 sm:px-6 md:px-8 lg:px-12 py-10 sm:py-14 md:py-18 lg:py-24"
+        className="w-full px-4 sm:px-6 md:px-8 py-10 sm:py-14 md:py-18 lg:py-24"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.1 }}
@@ -58,7 +58,7 @@ function MissionVisionSection() {
       </motion.div>
       <motion.div
         variants={missionStaggerContainer}
-        className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-5 md:gap-6 lg:gap-8 max-w-5xl mx-auto"
+        className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-5 md:gap-6 lg:gap-8 max-w-7xl mx-auto"
       >
         {CARDS.map((card, i) => (
           <motion.div

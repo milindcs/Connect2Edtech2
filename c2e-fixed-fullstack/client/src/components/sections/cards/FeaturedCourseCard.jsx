@@ -17,13 +17,13 @@ function FeaturedCourseCard({ course, index = 0, enrollHref, detailHref, enrollL
 
   return (
     <motion.div
-      className="bg-white rounded-2xl shadow-xl overflow-hidden border border-slate-100 flex flex-col justify-between transition-transform duration-300 hover:-translate-y-1 hover:shadow-2xl w-full"
+      className="bg-white rounded-2xl shadow-xl overflow-hidden border border-slate-100 flex flex-col justify-between transition-transform duration-300 hover:-translate-y-1 hover:shadow-2xl w-full h-full"
       initial={{ opacity: 0, y: 30 }}
       animate="visible"
       variants={{ visible: { opacity: 1, y: 0 } }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
     >
-      <div>
+      <div className="flex-1 flex flex-col">
         {/* Card Header */}
         <div className="px-5 sm:px-6 pt-6 sm:pt-7 pb-2">
           <span className={`inline-block ${badgeBg} ${badgeText} text-[9px] sm:text-[10px] font-bold px-2 py-1 rounded-full mb-3`}>
@@ -36,7 +36,7 @@ function FeaturedCourseCard({ course, index = 0, enrollHref, detailHref, enrollL
         </div>
 
         {/* Card Body */}
-        <div className="px-5 sm:px-6 pb-2">
+        <div className="px-5 sm:px-6 pb-2 flex-1 flex flex-col">
           <p className="text-slate-600 text-xs mb-3 sm:mb-4 leading-relaxed line-clamp-3">
             {course.description}
           </p>

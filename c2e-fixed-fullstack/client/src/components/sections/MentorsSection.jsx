@@ -34,7 +34,7 @@ function MentorsSection({ showHeading = true, showSocials = false }) {
   return (
       <motion.section
         id="mentors"
-        className="w-full px-4 sm:px-6 md:px-8 lg:px-12 py-10 sm:py-14 md:py-18 lg:py-24"
+        className="w-full px-4 sm:px-6 md:px-8 py-10 sm:py-14 md:py-18 lg:py-24"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.1 }}

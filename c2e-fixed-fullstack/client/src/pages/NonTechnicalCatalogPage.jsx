@@ -36,7 +36,7 @@ function NonTechnicalCatalogPage() {
       topSlot={<CatalogToggle active="non-technical" />}
       showSharedSections={false}
     >
-      <section className="w-full px-4 sm:px-6 md:px-8 pb-10 sm:pb-14 md:pb-16">
+      <section className="w-full pb-10 sm:pb-14 md:pb-16">
         {status === 'loading' && (
           <div className="flex justify-center py-10">
             <Loader2 className="w-6 h-6 animate-spin text-accent" />
@@ -73,7 +73,7 @@ function NonTechnicalCatalogPage() {
                 },
               },
             }}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 md:gap-5 max-w-6xl mx-auto"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-7xl mx-auto"
           >
             {courses.map((course, i) => (
               <motion.div key={course._id} variants={fadeUp} custom={i}>

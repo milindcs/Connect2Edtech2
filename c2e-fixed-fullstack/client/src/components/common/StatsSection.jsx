@@ -150,7 +150,6 @@ function StatsSection() {
         px-4
         sm:px-6
         md:px-8
-        lg:px-12
         py-12
         sm:py-16
         md:py-20
@@ -199,24 +198,7 @@ function StatsSection() {
       {/* STAT GRID                                                     */}
       {/* ============================================================ */}
 
-      <div
-        className="
-          w-full
-          max-w-6xl
-          mx-auto
-
-          grid
-          grid-cols-2
-          md:grid-cols-4
-
-          items-stretch
-
-          gap-3
-          sm:gap-4
-          md:gap-5
-          lg:gap-6
-        "
-      >
+      <div className="w-full max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 items-stretch gap-3 sm:gap-4 md:gap-5 lg:gap-6">
         {STATS.map((stat, index) => (
           <motion.div
             key={stat.label}

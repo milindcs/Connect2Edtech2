@@ -33,7 +33,7 @@ const QUICK_LINKS = NAV_LINKS.filter((l) =>
 function Footer() {
   return (
     <motion.footer
-      className="w-full bg-white text-black border-t border-gray-border px-4 sm:px-6 md:px-8 lg:px-12 pt-5 sm:pt-6 md:pt-8 pb-16 sm:pb-6"
+      className="w-full bg-white text-black border-t border-gray-border px-4 sm:px-6 md:px-8 pt-5 sm:pt-6 md:pt-8 pb-16 sm:pb-6"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.1 }}
@@ -48,7 +48,7 @@ function Footer() {
         },
       }}
     >
-      <motion.div variants={fadeUp} className="flex flex-col md:flex-row md:justify-between gap-5 sm:gap-6 md:gap-8">
+      <motion.div variants={fadeUp} className="flex flex-col md:flex-row md:justify-between gap-5 sm:gap-6 md:gap-8 max-w-7xl mx-auto">
         {/* Left column: brand + tagline + socials */}
         <div className="flex flex-col gap-1.5 sm:gap-2 max-w-xs">
           <Link to="/" className="flex items-center gap-1 sm:gap-1.5" aria-label="Connect2EdTech Home">

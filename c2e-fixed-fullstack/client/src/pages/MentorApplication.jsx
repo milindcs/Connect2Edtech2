@@ -219,7 +219,7 @@ function MentorApplication() {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.05 }}
-        className="w-full max-w-3xl mx-auto px-4 sm:px-0 pb-16 sm:pb-20 flex flex-col gap-5 sm:gap-6"
+        className="w-full max-w-3xl mx-auto pb-16 sm:pb-20 flex flex-col gap-5 sm:gap-6"
       >
         <motion.div variants={cardZoomStagger} className="relative text-center mb-2">
           {/* Gentle floating decorative elements behind the heading */}

@@ -69,7 +69,7 @@ function CourseDetailPage() {
 
   return (
     <PageShell>
-      <div className="w-full max-w-4xl mx-auto px-4 sm:px-0 pb-16 sm:pb-20 flex flex-col gap-6 sm:gap-8">
+      <div className="w-full max-w-4xl mx-auto pb-16 sm:pb-20 flex flex-col gap-6 sm:gap-8">
         {/* Course image */}
         <motion.div initial="hidden" animate="visible"custom={0} variants={fadeUp}>
           <div className="rounded-[1.5rem] overflow-hidden bg-slate-50 border border-slate-200">

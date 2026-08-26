@@ -39,7 +39,7 @@ const FeaturedCoursesSection = () => {
   if (status === 'loading') {
     return (
       <section className="w-full bg-white py-10 sm:py-14 md:py-20 font-sans">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-center">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 flex justify-center">
           <Loader2 className="w-6 h-6 animate-spin text-accent" />
         </div>
       </section>
@@ -49,7 +49,7 @@ const FeaturedCoursesSection = () => {
   if (status === 'error' || featuredCourses.length === 0) {
     return (
       <section className="w-full bg-white py-10 sm:py-14 md:py-20 font-sans">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 text-center">
           <p className="text-sm text-gray-muted">Could not load courses right now. Please try again shortly.</p>
         </div>
       </section>
@@ -73,22 +73,22 @@ const FeaturedCoursesSection = () => {
         },
       }}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div variants={fadeUp} className="flex flex-col items-center lg:items-end max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center lg:text-left max-w-3xl mb-8 sm:mb-10 md:mb-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
+        <motion.div variants={fadeUp} className="flex flex-col items-center lg:items-end max-w-3xl mb-8 sm:mb-10 md:mb-12">
+          <div className="text-center lg:text-left max-w-3xl">
             <span className="text-indigo-600 font-semibold tracking-wide uppercase text-[10px] sm:text-xs md:text-sm bg-indigo-50 px-3 py-1 rounded-full">
               Future Skills &amp; Engineering
             </span>
             <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-extrabold text-slate-900 mt-2 sm:mt-3">
               Accelerate Your Career with Specialized Tech Tracks
             </h2>
-            <p className="text-slate-600 mt-2 sm:mt-3 text-sm sm:text-base md:text-lg px-2 sm:px-0">
+            <p className="text-slate-600 mt-2 sm:mt-3 text-sm sm:text-base md:text-lg">
               Industry-certified programs engineered to bridge practical coding, hardware-software integration, and modern architectures.
             </p>
           </div>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 md:gap-8 max-w-5xl lg:ml-0">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 md:gap-8 max-w-5xl mx-auto">
           {featuredCourses.map((course, i) => (
             <motion.div key={course._id} variants={fadeUp} custom={i}>
               <FeaturedCourseCard

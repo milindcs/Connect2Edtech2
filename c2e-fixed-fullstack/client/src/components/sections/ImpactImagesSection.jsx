@@ -173,7 +173,7 @@ function ImpactImagesSection() {
 
   return (
     <motion.section
-      className="w-full px-5 sm:px-8 md:px-12 py-16 sm:py-20 md:py-24 lg:py-32"
+      className="w-full px-4 sm:px-6 md:px-8 py-16 sm:py-20 md:py-24 lg:py-32"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.1 }}
@@ -188,7 +188,7 @@ function ImpactImagesSection() {
         },
       }}
     >
-      <motion.div variants={fadeUp} className="flex flex-col max-w-7xl mx-auto px-5 sm:px-8 md:px-12">
+      <motion.div variants={fadeUp} className="max-w-7xl mx-auto">
         <SectionHeading
           title="Moments In Action"
           subtitle="Snapshots from our sessions, mentor meetups, and student milestones."
@@ -208,7 +208,7 @@ function ImpactImagesSection() {
             },
           },
         }}
-        className="max-w-7xl mx-auto px-5 sm:px-8 md:px-12"
+        className="max-w-7xl mx-auto"
       >
         <div
           className="overflow-hidden"

@@ -35,7 +35,7 @@ function CourseCategoryPage({ department, topSlot }) {
 
   return (
     <PageShell topSlot={topSlot}>
-      <section className="w-full px-4 sm:px-6 md:px-8 pb-10 sm:pb-14 md:pb-16">
+      <section className="w-full pb-10 sm:pb-14 md:pb-16">
         {status === 'loading' && (
           <p className="text-center text-gray-muted text-sm py-10">Loading courses…</p>
         )}
@@ -67,7 +67,7 @@ function CourseCategoryPage({ department, topSlot }) {
                    },
                  },
                }}
-               className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 md:gap-5 max-w-6xl mx-auto"
+               className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-7xl mx-auto"
              >
              {courses.map((course, i) => (
                <motion.div key={course._id} variants={fadeUp} custom={i}>

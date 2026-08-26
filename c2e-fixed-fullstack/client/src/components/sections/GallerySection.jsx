@@ -36,13 +36,14 @@ function GallerySection() {
   const next = () => setActiveIndex((i) => (i + 1) % images.length)
 
   return (
-    <section className="w-full px-5 sm:px-8 md:px-12 py-10 sm:py-14 md:py-20">
-      <SectionHeading
-        title="Photo Gallery"
-        subtitle="Moments from our sessions, mentor meetups, and student milestones."
-        align="left"
-        className="mb-10 sm:mb-12 md:mb-14"
-      />
+    <section className="w-full px-4 sm:px-6 md:px-8 py-10 sm:py-14 md:py-20">
+      <div className="max-w-7xl mx-auto">
+        <SectionHeading
+          title="Photo Gallery"
+          subtitle="Moments from our sessions, mentor meetups, and student milestones."
+          align="left"
+          className="mb-10 sm:mb-12 md:mb-14"
+        />
 
       {status === 'loading' && (
         <div className="flex flex-col items-center justify-center gap-3 py-16">
@@ -76,7 +77,7 @@ function GallerySection() {
       )}
 
       {status === 'success' && images.length > 0 && (
-        <div className="max-w-6xl mx-auto columns-2 sm:columns-3 lg:columns-4 gap-4 sm:gap-5 [column-fill:_balance]">
+        <div className="max-w-7xl mx-auto columns-2 sm:columns-3 lg:columns-4 gap-4 sm:gap-5 [column-fill:_balance]">
           {images.map((item, i) => (
             <motion.button
               type="button"

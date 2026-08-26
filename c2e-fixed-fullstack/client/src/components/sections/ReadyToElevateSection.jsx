@@ -38,7 +38,7 @@ function ReadyToElevateSection() {
   return (
     <motion.section
       id="contact"
-      className="w-full px-5 sm:px-8 md:px-12 py-10 sm:py-14 md:py-18 lg:py-24"
+      className="w-full px-4 sm:px-6 md:px-8 py-10 sm:py-14 md:py-18 lg:py-24"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.1 }}
@@ -53,7 +53,7 @@ function ReadyToElevateSection() {
         },
       }}
     >
-      <motion.div variants={fadeUp} className="flex flex-col items-center lg:items-start text-center lg:text-left gap-4 sm:gap-6 mb-8 sm:mb-10 max-w-6xl mx-auto">
+      <motion.div variants={fadeUp} className="flex flex-col items-center lg:items-start text-center lg:text-left gap-4 sm:gap-6 mb-8 sm:mb-10 max-w-7xl mx-auto">
         <SectionHeading
           title="READY TO ELEVATE YOUR FUTURE?"
           subtitle="Join thousands of learners and take the first step towards your dream career today! Send us a message and our team will get back to you."
@@ -62,7 +62,7 @@ function ReadyToElevateSection() {
         />
       </motion.div>
 
-      <motion.div variants={fadeUp} className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 max-w-6xl mx-auto">
+      <motion.div variants={fadeUp} className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 max-w-7xl mx-auto">
         <div className="space-y-6 sm:space-y-8 lg:text-left">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 sm:gap-3">
             {contactItems.map((item) => (

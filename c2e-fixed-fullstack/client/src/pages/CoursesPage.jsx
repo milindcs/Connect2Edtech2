@@ -40,7 +40,7 @@ function CoursesPage() {
 
   return (
     <PageShell showSharedSections={false}>
-      <section className="w-full px-4 sm:px-6 md:px-8 pb-10 sm:pb-14 md:pb-16">
+      <section className="w-full pb-10 sm:pb-14 md:pb-16">
         <div className="flex justify-center mb-6 sm:mb-8">
           <CatalogToggle active={category} onSelect={setCategory} />
         </div>
@@ -77,7 +77,7 @@ function CoursesPage() {
                 },
               },
             }}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 max-w-6xl mx-auto"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-7xl mx-auto"
           >
             {courses.map((course, i) => (
               <motion.div key={course._id} variants={fadeUp} custom={i}>
