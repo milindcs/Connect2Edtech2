@@ -27,7 +27,6 @@ const galleryRoutes = require('../routes/galleryRoutes');
 const trainerRoutes = require('../routes/trainerRoutes');
 const settingRoutes = require('../routes/settingRoutes');
 const userAdminRoutes = require('../routes/userAdminRoutes');
-const { validateGmailConfig } = require('../services/emailService');
 
 const app = express();
 const isVercel = process.env.VERCEL === '1' || !!process.env.VERCEL;
