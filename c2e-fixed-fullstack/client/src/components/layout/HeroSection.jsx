@@ -12,7 +12,9 @@ function HeroSection() {
   }, [])
 
   return (
-    <section className="relative w-full h-[calc(100vh-64px)] sm:h-[calc(100vh-80px)] min-h-[480px] overflow-hidden flex items-end justify-end px-4 sm:px-6 md:px-8 mt-16 sm:mt-20 pt-12 sm:pt-16 pb-10">
+    <section
+      className="relative w-full h-[calc(100vh-64px)] sm:h-[calc(100vh-80px)] min-h-[480px] overflow-hidden flex items-end justify-end px-4 sm:px-6 md:px-8 mt-16 sm:mt-20 pb-10"
+    >
 
       {/* Background Video Layer */}
       <div className="absolute inset-0 w-full h-full z-0 pointer-events-none overflow-hidden">
@@ -37,7 +39,7 @@ function HeroSection() {
       <div className="absolute inset-0 z-10 bg-gradient-to-l from-white/25 via-white/10 to-transparent backdrop-blur-[0.5px]" />
 
       {/* Right-Aligned Hero Content with Side-by-Side Bottom Layout */}
-      <div className="relative z-20 flex flex-col items-end text-right w-full pt-16 ml-auto max-w-5xl justify-between h-full">
+      <div className="relative z-20 flex flex-col items-end text-right w-full ml-auto max-w-5xl justify-between h-full">
         {/* Top Spacer */}
         <div></div>
 
