@@ -61,9 +61,11 @@ function Navbar({ onMenuOpen }) {
         left-0
         z-50
         w-full
-        bg-white/90
+        bg-white/95
+        backdrop-blur
         border-b
         border-slate-100
+        shadow-sm
       "
     >
       <div
@@ -71,19 +73,18 @@ function Navbar({ onMenuOpen }) {
           w-full
           max-w-7xl
           mx-auto
-          pl-6
+          pl-4
           pr-4
-          sm:pl-8
+          sm:pl-6
           sm:pr-6
-          md:pl-10
+          md:pl-8
           md:pr-8
           flex
           flex-row
           items-center
           justify-between
           gap-4
-          py-3
-          sm:py-4
+          py-4
         "
       >
         {/* Logo */}
@@ -104,8 +105,8 @@ function Navbar({ onMenuOpen }) {
           </Link>
         </div>
 
-        {/* Desktop Navigation + Actions */}
-        <div className="hidden lg:flex items-center gap-6 text-sm font-medium text-slate-600 ml-[30px]">
+        {/* Desktop Navigation */}
+        <div className="hidden lg:flex items-center gap-8 text-sm font-medium text-slate-600 ml-[30px]">
           {NAV_LINKS.map(({ label, to }) => (
             <Link
               key={label}
@@ -119,11 +120,15 @@ function Navbar({ onMenuOpen }) {
               {label}
             </Link>
           ))}
-          <div className="w-px h-5 bg-slate-200" />
+        </div>
+
+        {/* Right Actions: Admin + Login + Get Started */}
+        <div className="hidden lg:flex items-center gap-4">
+          <div className="w-px h-6 bg-slate-200" />
           <Link
             to="/admin/login"
             title="Admin Login"
-            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl border border-[#f0247a]/30 text-[#f0247a] text-sm font-medium whitespace-nowrap hover:bg-[#f0247a]/10 transition-colors"
+            className="inline-flex items-center gap-1.5 px-5 py-2 rounded-full border-2 border-[#f0247a] text-[#f0247a] text-sm font-medium whitespace-nowrap transition-all duration-200"
           >
             <Shield className="w-4 h-4" />
             Admin
@@ -136,7 +141,7 @@ function Navbar({ onMenuOpen }) {
           </Link>
           <Link
             to="/get-started"
-            className="inline-flex items-center px-4 py-2 rounded-xl bg-[#f0247a] text-white font-medium text-sm whitespace-nowrap shadow-md hover:bg-[#c41d63] transition-all"
+            className="inline-flex items-center px-5 py-2 rounded-full bg-[#f0247a] text-white font-medium text-sm whitespace-nowrap shadow-md hover:bg-[#c41d63] transition-all"
           >
             Get Started
           </Link>
