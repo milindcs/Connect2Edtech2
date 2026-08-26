@@ -1,7 +1,7 @@
 import { Link, useLocation } from "react-router-dom";
 import { Shield } from "lucide-react";
 import logo from "../../assets/cc2e.png";
-import { useState, useMemo } from "react";
+import { useMemo } from "react";
 
 
 /* ====================================================================== */
@@ -56,13 +56,11 @@ function Navbar({ onMenuOpen }) {
   return (
     <nav
       className="
-        fixed
+        sticky
         top-0
-        left-0
-        z-50
+        z-[1000]
         w-full
-        bg-white/95
-        backdrop-blur
+        bg-white
         border-b
         border-slate-100
         shadow-sm
@@ -105,37 +103,33 @@ function Navbar({ onMenuOpen }) {
           </Link>
         </div>
 
-        {/* Desktop Navigation */}
-        <div className="hidden lg:flex items-center gap-8 text-sm font-medium text-slate-600 ml-[30px]">
+        {/* Desktop Navigation + Actions */}
+        <div className="hidden md:flex items-center gap-6 text-sm font-medium text-slate-600 ml-[30px]">
           {NAV_LINKS.map(({ label, to }) => (
             <Link
               key={label}
               to={to}
-              className={`whitespace-nowrap transition-colors ${
+              className={`whitespace-nowrap text-[#2b3a4a] hover:text-pink-600 font-medium text-base transition-colors ${
                 isActive(to) && label !== "Home"
                   ? "text-[#f0247a] font-semibold"
-                  : "hover:text-pink-600"
+                  : ""
               }`}
             >
               {label}
             </Link>
           ))}
-        </div>
-
-        {/* Right Actions: Admin + Login + Get Started */}
-        <div className="hidden lg:flex items-center gap-4">
-          <div className="w-px h-6 bg-slate-200" />
+          <div className="w-px h-5 bg-slate-200" />
           <Link
             to="/admin/login"
             title="Admin Login"
-            className="inline-flex items-center gap-1.5 px-5 py-2 rounded-full border-2 border-[#f0247a] text-[#f0247a] text-sm font-medium whitespace-nowrap transition-all duration-200"
+            className="inline-flex items-center gap-1.5 px-5 py-2 rounded-full border-2 border-[#f0247a] bg-white text-[#f0247a] text-sm font-medium whitespace-nowrap hover:bg-pink-50 transition-colors"
           >
             <Shield className="w-4 h-4" />
             Admin
           </Link>
           <Link
             to="/login"
-            className="inline-flex items-center text-sm font-medium text-slate-700 whitespace-nowrap hover:text-pink-600 transition-colors"
+            className="inline-flex items-center text-[#2b3a4a] hover:text-pink-600 font-medium text-base transition-colors"
           >
             Login
           </Link>
@@ -148,7 +142,7 @@ function Navbar({ onMenuOpen }) {
         </div>
 
         {/* Mobile Menu Button */}
-        <div className="lg:hidden">
+        <div className="md:hidden">
           <button
             type="button"
             onClick={onMenuOpen}

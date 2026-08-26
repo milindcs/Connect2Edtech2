@@ -1,41 +1,55 @@
-import { useEffect, useState } from 'react'
+import { useMemo, useState } from 'react'
 import { motion } from 'framer-motion'
 import PageShell from '../components/layout/PageShell.jsx'
 import CourseCard from '../components/sections/cards/CourseCard.jsx'
 import CatalogToggle from '../components/common/CatalogToggle.jsx'
-import { getCourses } from '../services/courses.js'
 import { fadeUp } from '../utils/animationVariants'
 
-// /courses — the unified "Courses" page listing every active course across
-// all departments. Uses the same white CourseCard style as the homepage
-// "Our Courses" section. Each card's CTA links to the course detail page
-// (/courses/:courseId), where visitors can then enroll
-// (/enroll/:courseId). The toggle at the top lets visitors filter inline
-// between All, Technical and Non-Technical courses.
+const MOCK_COURSES = [
+  {
+    _id: '1',
+    title: 'MERN Stack Development',
+    description: 'Build full-stack web apps with MongoDB, Express, React, and Node.js.',
+    category: 'technical',
+  },
+  {
+    _id: '2',
+    title: 'Data Science',
+    description: 'Turn raw data into actionable insights using Python, statistics, and machine learning.',
+    category: 'technical',
+  },
+  {
+    _id: '3',
+    title: 'UI/UX Design',
+    description: 'Design intuitive, user-centered digital products with modern design tools.',
+    category: 'technical',
+  },
+  {
+    _id: '4',
+    title: 'Cloud Engineering',
+    description: 'Learn AWS, Azure, and GCP cloud architecture and DevOps pipelines.',
+    category: 'technical',
+  },
+  {
+    _id: '5',
+    title: 'Digital Marketing',
+    description: 'Master SEO, social media strategy, and analytics to drive business growth.',
+    category: 'non-technical',
+  },
+  {
+    _id: '6',
+    title: 'Cyber Security',
+    description: 'Learn ethical hacking, network security, and penetration testing.',
+    category: 'technical',
+  },
+]
+
 function CoursesPage() {
-  const [courses, setCourses] = useState([])
-  const [category, setCategory] = useState('all') // all | technical | non-technical
-  const [status, setStatus] = useState('loading') // loading | success | error
+  const [category, setCategory] = useState('all')
 
-  useEffect(() => {
-    let cancelled = false
-    setStatus('loading')
-
-    const params = category === 'all' ? {} : { category }
-    getCourses(params)
-      .then((res) => {
-        if (cancelled) return
-        setCourses(res.data || [])
-        setStatus('success')
-      })
-      .catch(() => {
-        if (cancelled) return
-        setStatus('error')
-      })
-
-    return () => {
-      cancelled = true
-    }
+  const courses = useMemo(() => {
+    if (category === 'all') return MOCK_COURSES
+    return MOCK_COURSES.filter((c) => c.category === category)
   }, [category])
 
   return (
@@ -45,23 +59,13 @@ function CoursesPage() {
           <CatalogToggle active={category} onSelect={setCategory} />
         </div>
 
-        {status === 'loading' && (
-          <p className="text-center text-gray-muted text-sm py-10">Loading courses…</p>
-        )}
-
-        {status === 'error' && (
-          <p className="text-center text-gray-muted text-sm py-10">
-            We couldn't load courses right now. Please try again shortly.
-          </p>
-        )}
-
-        {status === 'success' && courses.length === 0 && (
+        {courses.length === 0 && (
           <p className="text-center text-gray-muted text-sm py-10">
             No courses are available yet — check back soon!
           </p>
         )}
 
-        {status === 'success' && courses.length > 0 && (
+        {courses.length > 0 && (
           <motion.div
             key={category}
             initial="hidden"

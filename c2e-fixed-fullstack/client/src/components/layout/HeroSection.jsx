@@ -13,7 +13,7 @@ function HeroSection() {
 
   return (
     <section
-      className="relative w-full h-[calc(100vh-112px)] sm:h-[calc(100vh-128px)] min-h-[440px] overflow-hidden flex items-center px-4 sm:px-6 md:px-8 mt-[112px] sm:mt-[128px] pb-10"
+      className="relative w-full min-h-[75vh] overflow-hidden flex items-center px-4 sm:px-6 md:px-8 mt-[80px] sm:mt-[88px] pb-8"
     >
 
       {/* Background Video Layer */}
@@ -41,7 +41,7 @@ function HeroSection() {
       {/* Right-Aligned Hero Content */}
       <div className="relative z-20 flex flex-col items-end text-right w-full ml-auto max-w-5xl justify-center h-full">
         {/* Main Heading */}
-        <div className="w-full mb-8">
+        <div className="w-full mb-6">
           <motion.h1
             custom={6}
             initial="hidden"

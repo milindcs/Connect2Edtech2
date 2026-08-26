@@ -1,39 +1,43 @@
-import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 import SectionHeading from '../common/SectionHeading.jsx'
 import CourseCard from './cards/CourseCard.jsx'
-import { getCourses } from '../../services/courses.js'
 import { fadeUp } from '../../utils/animationVariants'
 
-// Homepage "Our Courses" section. Shows a curated grid of real, active
-// courses pulled from the API (up to 6) so visitors can immediately see
-// actual programs on the homepage. Each card's CTA links to the course
-// detail page (/courses/:courseId), where visitors can then enroll
-// (/enroll/:courseId). A footer CTA points to the full catalog.
+const MOCK_COURSES = [
+  {
+    _id: '1',
+    title: 'Full Stack Development',
+    description: 'Master modern web development with React, Node.js, MongoDB, and cloud deployment — from beginner to job-ready.',
+  },
+  {
+    _id: '2',
+    title: 'Data Science',
+    description: 'Learn Python, statistics, machine learning, and data visualization tools to unlock insights from real-world datasets.',
+  },
+  {
+    _id: '3',
+    title: 'UI/UX Design',
+    description: 'Master user research, wireframing, prototyping, and modern design tools like Figma to create stunning digital experiences.',
+  },
+  {
+    _id: '4',
+    title: 'Cloud Engineering',
+    description: 'Learn AWS, Azure, and GCP cloud architecture, DevOps pipelines, and infrastructure-as-code to build scalable systems.',
+  },
+  {
+    _id: '5',
+    title: 'Digital Marketing',
+    description: 'Master SEO, social media strategy, content marketing, and analytics to drive real business growth.',
+  },
+  {
+    _id: '6',
+    title: 'Cyber Security',
+    description: 'Learn ethical hacking, network security, penetration testing, and compliance frameworks to protect digital assets.',
+  },
+]
+
 function CoursesSection() {
-  const [courses, setCourses] = useState([])
-  const [status, setStatus] = useState('loading') // loading | success | error
-
-  useEffect(() => {
-    let cancelled = false
-    setStatus('loading')
-
-    getCourses()
-      .then((res) => {
-        if (cancelled) return
-        setCourses((res.data || []).slice(0, 6))
-        setStatus('success')
-      })
-      .catch(() => {
-        if (cancelled) return
-        setStatus('error')
-      })
-
-    return () => {
-      cancelled = true
-    }
-  }, [])
-
+  const courses = MOCK_COURSES.slice(0, 6)
   return (
     <motion.section
       id="courses"
@@ -61,37 +65,19 @@ function CoursesSection() {
         />
       </motion.div>
 
-      {status === 'loading' && (
-        <p className="text-left text-gray-muted text-sm py-10">Loading courses…</p>
-      )}
-
-      {status === 'error' && (
-        <p className="text-left text-gray-muted text-sm py-10">
-          We couldn't load courses right now. Please try again shortly.
-        </p>
-      )}
-
-      {status === 'success' && courses.length > 0 && (
-        <div className="w-full max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-          {courses.map((course, i) => (
-            <motion.div key={course._id} variants={fadeUp} custom={i}>
-              <CourseCard
-                title={course.title}
-                description={course.description}
-                courseId={course._id}
-                ctaLabel="View Details"
-                index={i}
-              />
-            </motion.div>
-          ))}
-        </div>
-      )}
-
-      {status === 'success' && courses.length === 0 && (
-        <p className="text-left text-gray-muted text-sm py-10">
-          No courses are available yet — check back soon!
-        </p>
-      )}
+      <div className="w-full max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+        {courses.map((course, i) => (
+          <motion.div key={course._id} variants={fadeUp} custom={i}>
+            <CourseCard
+              title={course.title}
+              description={course.description}
+              courseId={course._id}
+              ctaLabel="View Details"
+              index={i}
+            />
+          </motion.div>
+        ))}
+      </div>
 
       <motion.div variants={fadeUp} className="flex justify-center mt-10 sm:mt-14">
         <a
