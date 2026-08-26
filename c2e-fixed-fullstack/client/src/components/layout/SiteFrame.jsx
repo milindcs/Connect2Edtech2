@@ -1,4 +1,5 @@
 import WhatsAppChat from '../common/WhatsAppChat.jsx'
+import GmailChat from '../common/GmailChat.jsx'
 
 // Outer page wrapper. Per the homepage redesign brief, the black device-frame
 // border that used to run around the entire page has been removed — the site
@@ -8,6 +9,7 @@ function SiteFrame({ children }) {
   return (
     <div className="min-h-screen w-full bg-white overflow-x-hidden">
       {children}
+      <GmailChat />
       <WhatsAppChat />
     </div>
   )
