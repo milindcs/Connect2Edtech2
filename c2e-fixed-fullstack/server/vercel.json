@@ -1,0 +1,29 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "api/index.js",
+      "use": "@vercel/node",
+      "config": {
+        "includeFiles": [
+          "config/**",
+          "controllers/**",
+          "middleware/**",
+          "models/**",
+          "routes/**",
+          "seed/**",
+          "utils/**",
+          "services/**"
+        ],
+        "maxLambdaSize": "50mb",
+        "maxReducedLambdaSize": "50mb"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/api/index.js"
+    }
+  ]
+}

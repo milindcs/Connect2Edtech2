@@ -22,4 +22,11 @@ module.exports = {
   emailFrom: process.env.EMAIL_FROM || process.env.SMTP_USER || '',
   // Where new contact/enrollment submissions should be received.
   notifyEmail: process.env.NOTIFY_EMAIL || process.env.SMTP_USER || '',
+
+  // Gmail SMTP — for Become a Trainer notifications and acknowledgements.
+  // Uses Gmail App Password (never the regular account password).
+  // Port 465 / secure:true is the recommended Gmail SMTP configuration.
+  gmailUser: process.env.GMAIL_USER || '',
+  gmailAppPass: process.env.GMAIL_APP_PASSWORD || '',
+  trainerNotifyEmail: process.env.TRAINER_NOTIFICATION_EMAIL || process.env.GMAIL_USER || '',
 };

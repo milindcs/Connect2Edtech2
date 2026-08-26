@@ -19,7 +19,7 @@ function AboutHeroSection() {
         Explore Courses
       </motion.a>
       <motion.a
-        href="/mentor-application"
+         href="/trainer-application"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.4 }}

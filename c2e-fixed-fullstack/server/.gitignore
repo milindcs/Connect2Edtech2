@@ -25,6 +25,5 @@ Thumbs.db
 *.swo
 
 # Local tooling
-.kilo/
 .vercel
 .env*

@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const trainerSchema = new mongoose.Schema(
   {
     fullName: { type: String, required: true, trim: true },
-    email: { type: String, required: true, trim: true, lowercase: true, unique: true },
+    email: { type: String, required: true, trim: true, lowercase: true },
     phone: { type: String, required: true, trim: true },
     city: { type: String, trim: true, default: '' },
     state: { type: String, trim: true, default: '' },

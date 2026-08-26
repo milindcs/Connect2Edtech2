@@ -4,13 +4,14 @@ const cors = require('cors');
 const morgan = require('morgan');
 const path = require('path');
 const helmet = require('helmet');
-const rateLimit = require('express-rate-limit');
 const mongoose = require('mongoose');
 const { GridFSBucket } = require('mongodb');
 const { Readable } = require('stream');
 
 const connectDB = require('./config/db');
 const { notFound, errorHandler } = require('./middleware/errorMiddleware');
+const { authLimiter, apiLimiter } = require('./middleware/rateLimitMiddleware');
+const { validateGmailConfig } = require('./services/emailService');
 const Course = require('./models/Course');
 const Gallery = require('./models/Gallery');
 const { coursesData } = require('./seed/coursesData');
@@ -26,6 +27,7 @@ const mentorRoutes = require('./routes/mentorRoutes');
 const dashboardRoutes = require('./routes/dashboardRoutes');
 const galleryRoutes = require('./routes/galleryRoutes');
 const trainerRoutes = require('./routes/trainerRoutes');
+const trainerApplicationRoutes = require('./routes/trainerApplicationRoutes');
 const settingRoutes = require('./routes/settingRoutes');
 const userAdminRoutes = require('./routes/userAdminRoutes');
 
@@ -112,25 +114,6 @@ app.get('/api/health', (req, res) => {
   res.json({ success: true, message: 'Connect2EdTech API is running' });
 });
 
-// ─── Rate limiting ──────────────────────────────────────────────
-// Strict limit on auth routes to mitigate brute-force attacks
-const authLimiter = rateLimit({
-  windowMs: 15 * 60 * 1000, // 15 minutes
-  max: 10,
-  message: 'Too many login attempts, please try again later.',
-  standardHeaders: true,
-  legacyHeaders: false,
-});
-
-// General API rate limit
-const apiLimiter = rateLimit({
-  windowMs: 15 * 60 * 1000, // 15 minutes
-  max: 300,
-  message: 'Too many requests, please try again later.',
-  standardHeaders: true,
-  legacyHeaders: false,
-});
-
 app.use('/api/auth/login', authLimiter);
 app.use('/api/auth/user/login', authLimiter);
 app.use('/api/contact', apiLimiter);
@@ -142,6 +125,7 @@ app.use('/api/contact', contactRoutes);
 app.use('/api/courses', courseRoutes);
 app.use('/api/enrollment', enrollmentRoutes);
 app.use('/api/mentor-application', mentorRoutes);
+app.use('/api/trainer-application', trainerApplicationRoutes);
 app.use('/api/dashboard', dashboardRoutes);
 app.use('/api/gallery', galleryRoutes);
 app.use('/api/trainers', trainerRoutes);
@@ -207,6 +191,7 @@ process.on('uncaughtException', (err) => {
 
   const server = app.listen(port, () => {
     console.log(`Server running in ${process.env.NODE_ENV || 'development'} mode on port ${port}`);
+    validateGmailConfig();
   });
 
   server.on('error', (err) => {

@@ -31,7 +31,7 @@ export const NAV_LINKS = [
   },
   {
     label: "Become a Trainer",
-    to: "/mentor-application",
+    to: "/trainer-application",
   },
 ];
 

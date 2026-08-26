@@ -62,6 +62,15 @@ export const emailUrl = (
   return `mailto:${email}`;
 };
 
+export const gmailTrainerUrl = (
+  email = CONTACT.email,
+  subject = "Become a Trainer - Connect2EdTech",
+  body = "Hello, I'm interested in becoming a trainer with Connect2EdTech. Please find my details below."
+) => {
+  const params = new URLSearchParams({ subject, body });
+  return `mailto:${email}?${params.toString()}`;
+};
+
 
 export const phoneUrl = (
   phone = CONTACT.phone

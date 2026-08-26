@@ -29,6 +29,7 @@ const TechnicalCatalogPage = lazy(() => import('../pages/TechnicalCatalogPage.js
 const NonTechnicalCatalogPage = lazy(() => import('../pages/NonTechnicalCatalogPage.jsx'))
 const DepartmentCourses = lazy(() => import('../pages/DepartmentCourses.jsx'))
 const MentorApplication = lazy(() => import('../pages/MentorApplication.jsx'))
+const TrainerApplication = lazy(() => import('../pages/TrainerApplication.jsx'))
 const Mentors = lazy(() => import('../pages/Mentors.jsx'))
 const EnrollmentPage = lazy(() => import('../pages/EnrollmentPage.jsx'))
 const CourseDetailPage = lazy(() => import('../pages/CourseDetailPage.jsx'))
@@ -58,6 +59,7 @@ function App() {
           <Route path="/courses/:courseId" element={<CourseDetailPage />} />
           <Route path="/enroll/:courseId" element={<EnrollmentPage />} />
           <Route path="/mentor-application" element={<MentorApplication />} />
+          <Route path="/trainer-application" element={<TrainerApplication />} />
           <Route path="/mentors" element={<Mentors />} />
           <Route path="/contact" element={<ContactPage />} />
 
