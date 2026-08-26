@@ -102,7 +102,7 @@ function Navbar({ onMenuOpen }) {
         </div>
 
         {/* Desktop Navigation + Actions */}
-        <div className="hidden lg:flex items-center gap-6 text-sm font-medium text-slate-600">
+        <div className="hidden lg:flex items-center gap-6 text-sm font-medium text-slate-600 ml-8">
           {NAV_LINKS.map(({ label, to }) => (
             <Link
               key={label}
