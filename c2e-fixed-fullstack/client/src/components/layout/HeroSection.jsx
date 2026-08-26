@@ -12,7 +12,7 @@ function HeroSection() {
   }, [])
 
   return (
-    <section className="relative w-full h-[75vh] min-h-[500px] overflow-hidden flex items-end justify-end px-4 sm:px-6 md:px-8 mt-24 sm:mt-28 pt-12 sm:pt-16 pb-10">
+    <section className="relative w-full h-[calc(100vh-64px)] sm:h-[calc(100vh-80px)] min-h-[480px] overflow-hidden flex items-end justify-end px-4 sm:px-6 md:px-8 mt-16 sm:mt-20 pt-12 sm:pt-16 pb-10">
 
       {/* Background Video Layer */}
       <div className="absolute inset-0 w-full h-full z-0 pointer-events-none overflow-hidden">

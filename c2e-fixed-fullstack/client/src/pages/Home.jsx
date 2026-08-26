@@ -19,7 +19,7 @@ function Home() {
       <Navbar onMenuOpen={() => setIsMenuOpen(true)} />
       <HeroSection />
 
-      <div className="h-32 sm:h-40 md:h-48" />
+      <div className="h-24 sm:h-32 md:h-40" />
 
       <div className="pt-16 sm:pt-20">
         <motion.div variants={fadeUp} custom={0}>
