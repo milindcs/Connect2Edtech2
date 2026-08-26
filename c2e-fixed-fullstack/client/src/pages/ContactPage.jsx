@@ -84,7 +84,7 @@ function ContactPage() {
                 ))}
               </div>
 
-              {/* Google Maps */
+              {/* Google Maps */}
               <motion.div variants={fadeUp} className="bg-white border border-slate-100 shadow-sm rounded-xl overflow-hidden">
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3725.2614029862817!2d76.6060931!3d12.3097425!2m3!1f0!2f0!3f0!3m2!1i1024!2i1024!4f13.1!3m3!1m2!1s0x8d5f4a2084adbec9%3A0xf4fcf3522495b959!2sconnect2future!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
