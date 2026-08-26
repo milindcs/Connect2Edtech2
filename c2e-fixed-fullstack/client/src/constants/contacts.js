@@ -35,7 +35,7 @@ export const SOCIAL = {
   github: null,
 
   googleMaps:
-    "https://www.google.com/maps/place/connect2future/@12.3097425,76.6060931,17z/data=!4m10!1m2!2m1!1sconnect2future!3m6!1s0x8d5f4a2084adbec9:0xf4fcf3522495b959!8m2!3d12.309769!4d76.608718!15sCg5jb25uZWN0MmZ1dHVyZVoQIg5jb25uZWN0MmZ1dHVyZZIBHmJ1c2luZXNzX21hbmFnZW1lbnRfY29uc3VsdGFudOABAA!16s/g/11xw0lf7hj",
+    "https://www.google.com/maps/place/connect2future/@12.3097425,76.6060931,17z/data=!4m10!1m2!1m3!1m2!1s0x8d5f4a2084adbec9:0xf4fcf3522495b959!8m2!3d12.309769!4d76.608718!15sCg5jb25uZWN0MmZ1dHVyZVoQIg5jb25uZWN0MmZ1dHVyZZIBHmJ1c2luZXNzX21hbmFnZW1lbnRfY29uc3VsdGFudOABAA!16s/g/11xw0lf7hj",
 };
 
 
@@ -60,15 +60,6 @@ export const emailUrl = (
   email = CONTACT.email
 ) => {
   return `mailto:${email}`;
-};
-
-export const gmailTrainerUrl = (
-  email = CONTACT.email,
-  subject = "Become a Trainer - Connect2EdTech",
-  body = "Hello, I'm interested in becoming a trainer with Connect2EdTech. Please find my details below."
-) => {
-  const params = new URLSearchParams({ subject, body });
-  return `mailto:${email}?${params.toString()}`;
 };
 
 

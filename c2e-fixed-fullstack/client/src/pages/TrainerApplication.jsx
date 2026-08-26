@@ -223,7 +223,7 @@ function TrainerApplication() {
           <h2 className="relative text-xl sm:text-2xl font-bold text-black tracking-tight">
             Become a Trainer
           </h2>
-          <p className="relative text-xs sm:text-sm text-gray-muted mt-1">
+           <p className="relative text-xs sm:text-sm text-gray-muted mt-1">
             Share your expertise and help shape the next generation of professionals.
           </p>
         </motion.div>
