@@ -71,9 +71,12 @@ function Navbar({ onMenuOpen }) {
           w-full
           max-w-7xl
           mx-auto
-          px-4
-          sm:px-6
-          md:px-8
+          pl-6
+          pr-4
+          sm:pl-8
+          sm:pr-6
+          md:pl-10
+          md:pr-8
           flex
           flex-row
           items-center
